@@ -19,7 +19,7 @@
         graph TD;
         
         %% Business Layer
-        subgraph "Business Layer"
+        subgraph "Business Layer" 
             A[User: Job Seeker] -->|Input: Job Preferences| B{Start Application Process}
             B -->|Trigger| C[Fetch Job Listings 📌] 
             B -->|Trigger| D[Analyze Resume 📄] 
@@ -36,17 +36,13 @@
             I -->|Approved| J[Submit Application 🚀]
             I -->|Changes Needed| D
             I -->|Regenerate Cover Letter| E
-            I -->|Save Approved Documents| P
             J -->|Sent| K{Job Portals 📑}
-            
-            %% Markierung als Endpunkt
-            K -->|Application Completed ✅| End[🎯 Process Complete]
         end
 
         %% Verbindung Business → Application Layer
-        A -->|User Input| L
-        B -->|Trigger Automations| L
-        I -->|User Decision| P
+        A -.->|User Input| L
+        B -.->|Trigger Automations| L
+        I -.->|User Decision| P
 
         %% Application Layer
         subgraph "Application Layer"
@@ -59,14 +55,11 @@
             P -->|Provide Data| Q{Data Validation 🔎}
             Q -->|Valid| I
             Q -->|Reprocess Resume| N
-
-            %% Make.com’s Rolle deutlicher markieren
-            L -- Manages Automations & Data Flow -->|Central Orchestration| P
         end
 
         %% Verbindung Application → Technology Layer
-        L -->|Manages Processes| S
-        P -->|Stores Files| W
+        L -.->|Manages Processes| S
+        P -.->|Stores Files| W
 
         %% Technology Layer
         subgraph "Technology Layer"
