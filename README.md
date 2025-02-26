@@ -1,12 +1,10 @@
-
 # Auto-Application_v0.1
----
 
 ## Overview
 Auto-Application_v0.1 is an AI-powered automated job application workflow designed to streamline and optimize the job application process. By integrating multiple AI tools and automation services, this project assists users in generating personalized job applications, managing documents, and automating job searches.
 
 ## Features
-- **Automated Job Search**: Finds relevant job postings based on user-defined criteria.
+- **Automated Job Search**: Finds relevant job postings based on user-defined criteria using JobCopilot API.
 - **AI-Generated Cover Letters**: Uses OpenAI’s API to create customized cover letters tailored to job postings.
 - **Resume Optimization**: Analyzes LinkedIn profiles and resumes to enhance job application effectiveness.
 - **Workflow Automation**: Implements Make.com for seamless integration of job search, document storage, and email notifications.
@@ -16,22 +14,23 @@ Auto-Application_v0.1 is an AI-powered automated job application workflow design
 ```
 📦 Auto-Application_v0.1
  ┣ 📂 docs                 # Project documentation
- ┃ ┗ 📜 research_paper.md  # Scientific documentation of the project
+ ┃ ┣ 📜 research_paper.md  # Scientific documentation (versioned)
+ ┃ ┣ 📜 mermaid_diagram.md # Workflow visualization in Mermaid.js
+ ┃ ┗ 📜 README.md         # Project overview
  ┣ 📂 models               # Process and architecture models
- ┃ ┗ 📜 workflow.bpmn      # BPMN workflow of the automation process
  ┣ 📂 automation           # Automation scripts
  ┃ ┣ 📜 job_search.py      # Job scraping & API requests
  ┃ ┣ 📜 apply.py          # Automated application script
  ┃ ┗ 📜 storage.py        # Document storage automation
  ┣ 📂 configs              # Configuration files
  ┃ ┗ 📜 settings.yaml     # API keys & project settings
- ┗ 📜 README.md           # Project overview
+ ┗ 📜 LICENSE              # Project license
 ```
 
 ## BPMN Workflow
 The following diagram illustrates the automated job application workflow:
 
-![BPMN Workflow](models/workflow.bpmn)
+🔗 **[Mermaid Diagram - GitHub](https://github.com/gereonN/Auto-Application_v0.1/blob/main/docs/mermaid_diagram.md)**
 
 ## Installation
 ### Prerequisites
@@ -42,7 +41,7 @@ The following diagram illustrates the automated job application workflow:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/Auto-Application_v0.1.git
+git clone https://github.com/gereonN/Auto-Application_v0.1.git
 cd Auto-Application_v0.1
 ```
 
@@ -78,7 +77,9 @@ We welcome contributions! To contribute:
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ## Contact
-For inquiries or contributions, please contact **your-email@example.com** or open an issue on GitHub.
+For inquiries or contributions, please contact **Gereon Nürnberger** at [gereon.nuernberger@gmx.de](mailto:gereon.nuernberger@gmx.de) or open an issue on GitHub.
+
+🔗 **GitHub Repository** - [Auto-Application_v0.1](https://github.com/gereonN/Auto-Application_v0.1)
 
 ---
 
@@ -86,3 +87,5 @@ For inquiries or contributions, please contact **your-email@example.com** or ope
 This README, along with all other project documentation, has been generated using AI. The documentation reflects the current progress of the project and is continuously updated based on developments.
 
 **Generated using:** ChatGPT (GPT-4)
+
+
