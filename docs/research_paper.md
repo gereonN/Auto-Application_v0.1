@@ -106,7 +106,7 @@ The automated job application workflow is structured into three distinct layers:
 
 The following diagram represents the job application workflow across the **Business Layer, Application Layer, and Technology Layer**:
 
-![Job Application Workflow](./docs/workflow_diagram_screenshot.png)
+![Job Application Workflow](./workflow_diagram_screenshot.png)
 
 🔗 **Live Diagram:** [View in Browser](https://gereonn.github.io/Auto-Application_v0.1/workflow_diagram.html)
 ---
