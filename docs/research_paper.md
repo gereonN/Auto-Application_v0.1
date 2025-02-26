@@ -106,12 +106,9 @@ The automated job application workflow is structured into three distinct layers:
 
 The following diagram represents the job application workflow across the **Business Layer, Application Layer, and Technology Layer**:
 
-![Job Application Workflow](./docs/workflow_diagram.svg)
+![Job Application Workflow](./docs/workflow_diagram_screenshot.png)
 
-🔗 **Live Diagram:** [View in Browser](https://gereonn.github.io/Auto-Application_v0.1/docs/workflow_diagram.html)
-A visual representation of this workflow can be found in the **Mermaid diagram**, which is stored in the repository:  
-🔗 **[Mermaid Diagram - GitHub](https://github.com/gereonN/Auto-Application_v0.1/blob/main/docs/mermaid_diagram.md)**
-
+🔗 **Live Diagram:** [View in Browser](https://gereonn.github.io/Auto-Application_v0.1/workflow_diagram.html)
 ---
 
 ## 6. Make.com Workflow Implementation
