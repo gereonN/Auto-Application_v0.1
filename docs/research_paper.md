@@ -102,6 +102,85 @@ The automated job application workflow is structured into three distinct layers:
 
 3. **Technology Layer**: This layer includes the cloud-based infrastructure and data management services that support the workflow. PostgreSQL is used for structured data storage, Make.com handles API call management, and cloud storage solutions ensure secure handling of application files.
 
+---
+
+## 5.1 Workflow Architecture - Business, Application & Technology Layer
+
+The following Mermaid.js diagram represents the job application workflow across the **Business Layer, Application Layer, and Technology Layer**:
+
+```mermaid
+graph TD;
+    
+    %% Business Layer
+    subgraph "Business Layer" 
+        A[User: Job Seeker] -->|Input: Job Preferences| B{Start Application Process}
+        B -->|Trigger| C[Fetch Job Listings 📌] 
+        B -->|Trigger| D[Analyze Resume 📄] 
+        B -->|Trigger| E[Generate Cover Letter ✉️] 
+        C -->|Data Retrieved| F(Job Listings Available 📄)
+        D -->|Data Processed| G(Optimized Resume ✅)
+        E -->|Generated| H(Completed Cover Letter 📩)
+        
+        %% Entscheidungs-Gateway: User prüft die erstellten Dokumente
+        F -->|Proceed| I{User Review & Approval 🔍}
+        G -->|Proceed| I
+        H -->|Proceed| I
+        
+        I -->|Approved| J[Submit Application 🚀]
+        I -->|Changes Needed| D
+        I -->|Regenerate Cover Letter| E
+        I -->|Save Approved Documents| P
+        J -->|Sent| K{Job Portals 📑}
+        
+        %% Markierung als Endpunkt
+        K -->|Application Completed ✅| End[🎯 Process Complete]
+    end
+
+    %% Verbindung Business → Application Layer
+    A -.->|User Input| L
+    B -.->|Trigger Automations| L
+    I -.->|User Decision| P
+
+    %% Application Layer
+    subgraph "Application Layer"
+        L[Make.com Workflow 🔄] -->|Calls API| M(JobCopilot API 🔎)
+        L -->|Extracts Data| N[LinkedIn API / Scrapfly 📝]
+        L -->|AI Processing| O[OpenAI API 🤖]
+        L -->|Stores Documents| P[Google Drive / PostgreSQL 💾]
+
+        %% Entscheidungs-Gateway für Speichern oder Neuberechnung
+        P -->|Provide Data| Q{Data Validation 🔎}
+        Q -->|Valid| I
+        Q -->|Reprocess Resume| N
+
+        %% Make.com’s Rolle deutlicher markieren
+        L -- Manages Automations & Data Flow --|Central Orchestration| P
+    end
+
+    %% Verbindung Application → Technology Layer
+    L -.->|Manages Processes| S
+    P -.->|Stores Files| W
+
+    %% Technology Layer
+    subgraph "Technology Layer"
+        R[Cloud Server ☁️] -->|Runs Services| S[Make.com 🖥️]
+        S -->|Handles API Calls| T[JobCopilot API 🔎]
+        S -->|Processes AI Requests| U[OpenAI API 🤖]
+        S -->|Manages Data Storage| V[PostgreSQL Database 🗄️]
+        S -->|Stores Files| W[Google Drive 📂]
+    end
+
+    %% Legende
+    subgraph "Legend"
+        X[🔄 Workflow Automation]
+        Y[📌 Process Step]
+        Z[📄 Data Exchange]
+        AA[✅ Decision Point]
+        AB[🚀 Output]
+        AC[🔎 API Call]
+        AD[Gateway]
+    end
+
 A visual representation of this workflow can be found in the **Mermaid diagram**, which is stored in the repository:  
 🔗 **[Mermaid Diagram - GitHub](https://github.com/gereonN/Auto-Application_v0.1/blob/main/docs/mermaid_diagram.md)**
 
