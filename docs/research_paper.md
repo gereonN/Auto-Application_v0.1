@@ -127,6 +127,66 @@ While the Free Plan of Make.com provides basic automations, upgrading to a paid 
 - **Integration with professional networking tools for proactive job engagement**
 - **Advanced scheduling and process chaining for a fully autonomous application cycle**
 
+# Auto-Application Workflow Documentation
+
+## Introduction
+
+The **Auto-Application Workflow** is a comprehensive system designed to automate and optimize the job application process using Artificial Intelligence (AI). By integrating LinkedIn profile analysis, file uploads (specifically `.docx` resumes), and adaptive job search algorithms, the system aims to improve the job search experience, making it more efficient and personalized.
+
+This document outlines the core functionalities of the system, its technical architecture, and how users interact with the application. Additionally, it explains how the system processes resumes and notes through AI to tailor job recommendations and cover letters.
+
+## New Features
+
+### **File Upload for Resumes and Notes**
+
+The system now supports uploading `.docx` files for resumes and additional notes. This functionality allows users to provide more personalized data, which the system processes to adapt the job search results. By analyzing the content of the uploaded document, the system identifies key skills, experiences, and preferences to adjust job search parameters dynamically.
+
+### **Adaptive Job Search**
+
+Based on the content of the uploaded document, the job search is adapted to match the user’s experience and skillset. This feature is powered by AI algorithms that extract relevant keywords and job preferences from the user’s resume and documents.
+
+### **LinkedIn Profile Integration**
+
+Users can also upload their LinkedIn profile URL, which the system validates and analyzes. This step helps refine job search results, as the system considers the LinkedIn data in conjunction with the user’s resume and notes.
+
+### **AI-Generated Cover Letters**
+
+The system automatically generates tailored cover letters for each job application, based on the user’s resume and job preferences. The AI analyzes the job description and aligns the content with the user’s experience and skills.
+
+## Technical Architecture
+
+### **1. File Upload and Processing**
+
+Users are prompted to upload a `.docx` file. The system extracts the content using the `python-docx` library and stores it for further processing. This text is then analyzed by AI algorithms to extract relevant information (e.g., skills, job preferences, career highlights).
+
+### **2. LinkedIn Profile Validation**
+
+The system validates the LinkedIn profile URL provided by the user by sending a request to a webhook. The webhook processes the LinkedIn URL, checks its validity, and returns relevant information that can be used to refine job recommendations.
+
+### **3. AI-Based Job Search Adaptation**
+
+Once the resume content, LinkedIn profile, and other user preferences are collected, the system adapts the job search results. The AI uses this data to adjust job titles, keywords, and search filters, ensuring that the user receives job recommendations that match their qualifications.
+
+### **4. Job Application and Cover Letter Generation**
+
+After the job recommendations are filtered and refined, the system generates personalized cover letters. The AI uses the job description and the user’s resume to create a cover letter that highlights the most relevant skills and experience.
+
+## Methodology
+
+### **Data Collection and User Input**
+
+The user provides input through the command-line interface (CLI) or via the file upload system. This data is collected and stored in a structured format (JSON). The user can upload a `.docx` file containing their resume, enter their LinkedIn profile URL, and specify other job preferences (e.g., location, job type).
+
+### **System Processing and Adaptation**
+
+Once the data is collected, the system processes it using AI algorithms to analyze the content and adapt the job search parameters. The system also generates personalized cover letters for each job recommendation.
+
+## Future Work
+
+- **Enhanced AI Model**: Future iterations of the system will include an enhanced AI model to better understand and adapt to the user’s profile.
+- **More Job Boards**: Additional job boards will be integrated to expand the pool of available job opportunities.
+- **User Dashboard**: A user dashboard will be developed to track applications, statuses, and analytics.
+
 ---
 
 ## 7. Conclusion
